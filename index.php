@@ -73,9 +73,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         $username = trim($_POST['username'] ?? '');
         $email = trim($_POST['email'] ?? '');
+        $phone = trim($_POST['phonenumber'] ?? '');
         $password = $_POST['password'] ?? '';
 
-        if ($username === '' || $email === '' || $password === '') {
+        if ($username === '' || $email === '' || $phone === '' || $password === '') {
             jsonResponse(false, 'All fields are required.');
         }
 
@@ -109,6 +110,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $_SESSION['pending_registration'] = [
             'username' => $username,
             'email' => $email,
+            'phonenumber' => $phone,
             'password' => password_hash($password, PASSWORD_DEFAULT),
             'otp_hash' => password_hash($otp, PASSWORD_DEFAULT),
             'expires' => time() + 600,
