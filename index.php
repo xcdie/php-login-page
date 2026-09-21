@@ -415,7 +415,7 @@ if (isset($_SESSION['user_id'])) {
         body {
             margin: 0;
             font-family: Arial, sans-serif;
-            background: linear-gradient(135deg, #111827, #2563eb);
+            background: linear-gradient(135deg, #000000, #000000);
             min-height: 100vh;
             display: flex;
             align-items: center;
